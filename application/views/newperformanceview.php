@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>New Performance</title>
-	<link rel = 'stylesheet' type = 'text/css' href = '/myperformances/myperformances/css/styles.css'>
+	<link rel = 'stylesheet' type = 'text/css' href = '/myperformances/myperformances/myperformances/css/styles.css'>
 	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
 </head>
 <body>
@@ -32,6 +32,62 @@
 				<td>Name of event</td>
 				<td><input type="text" id="eventname" /></td>
 			</tr>
+			<tr>
+				<td>Location of event</td>
+				<td><input type="text" id="eventlocation" /></td>
+			</tr>			
+			<tr>
+				<td>Date of event</td>
+				<td class="italics">
+					day 
+					<select name="day">
+						<?php
+							for($i = 1; $i <= 31; $i++)
+							{
+								//Add leading zero if value < 10
+								if($i  < 10)
+								{
+									print "<option value=\"0 . $i\">$i</option>";
+								}
+								else
+								{
+									print "<option value='$i'>$i</option>";									
+								}
+							}
+						?>
+					</select>
+					</select>													
+					month
+					<select name="month">
+						<?php
+							$trailingZero;
+							for($i = 1; $i <= 12; $i++)
+							{
+								$trailingZero = "zero";
+								//Add leading zero if $i is less than 10
+								if($i  < 10)
+								{
+									$trailingZero .= $i;
+									print "<option value='$trailingZero'>$i</option>";
+								}
+								else
+								{
+									print "<option value='$i'>$i</option>";									
+								}
+							}
+						?>
+					</select>
+					year
+					<select name="year">
+						<?php
+							$date = intval(date('o')) - 10;
+							for($i = $date; $i <= ($date + 10); $i++)
+							{
+								print "<option value='$i'>$i</option>";
+							}
+						?>													
+				</td>
+			</tr>			
 		</table>
 	</form>
 </body>
