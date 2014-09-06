@@ -5,7 +5,7 @@
 	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
 </head>
 <body>
-	<form method="post" action="/myperformances/myperformances/validate/validateperformance">
+	<form method="post" action="/myperformances/myperformances/myperformances/validate/validateperformance">
 		<table>
 			<th colspan="2"><h1>New Performance</h1></th>
 			<tr>
@@ -87,7 +87,10 @@
 							}
 						?>													
 				</td>
-			</tr>			
+			</tr>	
+			<tr>
+				<td colspan="2"><input type="submit" value="Submit" /></td>
+			</tr>		
 		</table>
 	</form>
 </body>
