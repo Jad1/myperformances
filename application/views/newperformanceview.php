@@ -1,16 +1,28 @@
 <html>
 <head>
 	<title>New Performance</title>
-	<link rel = 'stylesheet' type = 'text/css' href = '/myperformances/myperformances/myperformances/css/styles.css'>
-	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+	<link rel = "stylesheet" type = "text/css" href = "/myperformances/myperformances/myperformances/css/styles.css">
+	<script src= "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 	<form method="post" action="/myperformances/myperformances/myperformances/validate/validateperformance">
 		<table>
 			<th colspan="2"><h1>New Performance</h1></th>
 			<tr>
-				<td>Distance (metres)</td>
-				<td><input type="text" id="distance" /></td>
+				<td>Discipline</td>
+				<td>
+					<select name="discipline">
+						<option value="Track">Track</option>
+						<option value="Road">Road</option>
+						<option value="XC">Cross Country</option>
+					</select>
+				</td>
+			</tr>
+
+			<!--The content of this area will vary depending on which discipline is selected.-->
+			<tr>
+				<td id="distancelabel"></td>
+				<td id="distanceinput"></td>
 			</tr>
 			<tr>
 				<td>Time</td>
@@ -47,7 +59,7 @@
 								//Add leading zero if value < 10
 								if($i  < 10)
 								{
-									print "<option value=\"0 . $i\">$i</option>";
+									print "<option value='$i'>$i</option>";
 								}
 								else
 								{
@@ -80,7 +92,7 @@
 					year
 					<select name="year">
 						<?php
-							$date = intval(date('o')) - 10;
+							$date = intval(date("o")) - 10;
 							for($i = $date; $i <= ($date + 10); $i++)
 							{
 								print "<option value='$i'>$i</option>";
