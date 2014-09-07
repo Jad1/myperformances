@@ -3,6 +3,7 @@
 	<title>New Performance</title>
 	<link rel = "stylesheet" type = "text/css" href = "/myperformances/myperformances/myperformances/css/styles.css">
 	<script src= "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/myperformances/myperformances/myperformances/javascript/disciplinechoice.js"></script>
 </head>
 <body>
 	<form method="post" action="/myperformances/myperformances/myperformances/validate/validateperformance">
@@ -11,7 +12,7 @@
 			<tr>
 				<td>Discipline</td>
 				<td>
-					<select name="discipline">
+					<select id="discipline">
 						<option value="Track">Track</option>
 						<option value="Road">Road</option>
 						<option value="XC">Cross Country</option>
