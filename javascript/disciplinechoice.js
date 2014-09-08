@@ -27,6 +27,7 @@ $(function()
 				distanceInput.append(newInput);
 				break;	
 			case "Road":
+			case "XC":
 				distanceLabel.text("Distance");
 				newInput = $("<input/>",
 				{
@@ -58,7 +59,10 @@ $(function()
 					text: "Miles"
 				});
 
-				newDropDown.append(newOptionValue);				
+				newDropDown.append(newOptionValue);	
+				break;	
+			default:
+				break;			
 		}
 	});
 });
