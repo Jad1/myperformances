@@ -22,8 +22,8 @@
 
 			<!--The content of this area will vary depending on which discipline is selected.-->
 			<tr>
-				<td id="distancelabel"></td>
-				<td id="distanceinput"></td>
+				<td id="distancelabel">Distance (metres)</td>
+				<td id="distanceinput"><input type="text" id="disciplineinput" /></td>
 			</tr>
 			<tr>
 				<td>Time</td>
