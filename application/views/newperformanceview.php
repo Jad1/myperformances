@@ -30,7 +30,7 @@
 				<td class="italics">
 					hrs <input type="text" id="hrs" size="2" />
 					mins 
-					<select name="mins">
+					<select id="mins">
 						<?php
 							for($i = 0; $i < 60; $i++)
 							{
@@ -39,7 +39,7 @@
 						?>
 					</select>
 					secs
-					<select name="secs">
+					<select id="secs">
 						<?php
 							for($i = 0; $i < 60; $i++)
 							{
@@ -61,7 +61,7 @@
 				<td>Date of event</td>
 				<td class="italics">
 					day 
-					<select name="day">
+					<select id="day">
 						<?php
 							for($i = 1; $i <= 31; $i++)
 							{
@@ -79,7 +79,7 @@
 					</select>
 					</select>													
 					month
-					<select name="month">
+					<select id="month">
 						<?php
 							$trailingZero;
 							for($i = 1; $i <= 12; $i++)
@@ -99,7 +99,7 @@
 						?>
 					</select>
 					year
-					<select name="year">
+					<select id="year">
 						<?php
 							$date = intval(date("o")) - 10;
 							for($i = $date; $i <= ($date + 10); $i++)
