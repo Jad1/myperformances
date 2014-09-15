@@ -29,7 +29,15 @@
 				<td>Time</td>
 				<td class="italics">
 					hrs <input type="text" id="hrs" size="2" />
-					mins <input type"text" id="mins" size="2" />
+					mins 
+					<select name="mins">
+						<?php
+							for($i = 0; $i < 60; $i++)
+							{
+								print "<option value='$i'>$i</option>";
+							}
+						?>
+					</select>
 					secs
 					<select name="secs">
 						<?php
