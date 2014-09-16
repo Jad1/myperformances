@@ -1,12 +1,12 @@
 <html>
 <head>
 	<title>New Performance</title>
-	<link rel = "stylesheet" type = "text/css" href = "/myperformances/myperformances/myperformances/css/styles.css">
+	<link rel = "stylesheet" type = "text/css" href = "/myperformances/myperformances/myperformances/css/styles.css" />
 	<script src= "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/myperformances/myperformances/myperformances/javascript/disciplinechoice.js"></script>
 </head>
 <body>
-	<form method="post" action="/myperformances/myperformances/myperformances/validate/validateperformance">
+	<form method="post" action="/myperformances/myperformances/myperformances/index.php/validation/validatedetails">
 		<table>
 			<th colspan="2"><h1>New Performance</h1></th>
 			<tr>
@@ -61,7 +61,7 @@
 				<td>Date of event</td>
 				<td class="italics">
 					day 
-					<select id="day">
+					<select name="day">
 						<?php
 							for($i = 1; $i <= 31; $i++)
 							{
@@ -79,27 +79,17 @@
 					</select>
 					</select>													
 					month
-					<select id="month">
+					<select name="month">
 						<?php
 							$trailingZero;
 							for($i = 1; $i <= 12; $i++)
 							{
-								$trailingZero = "zero";
-								//Add leading zero if $i is less than 10
-								if($i  < 10)
-								{
-									$trailingZero .= $i;
-									print "<option value='$trailingZero'>$i</option>";
-								}
-								else
-								{
-									print "<option value='$i'>$i</option>";									
-								}
+								print "<option value='$i'>$i</option>";									
 							}
 						?>
 					</select>
 					year
-					<select id="year">
+					<select name="year">
 						<?php
 							$date = intval(date("o")) - 10;
 							for($i = $date; $i <= ($date + 10); $i++)
@@ -110,7 +100,21 @@
 				</td>
 			</tr>	
 			<tr>
-				<td colspan="2"><input type="submit" value="Submit" /></td>
+				<td colspan="2">
+					<section class='invalid_input'>
+						<?php
+							if(isset($dateerror))
+							{
+								print $dateerror;
+							}
+							else
+							{
+								print "not set";
+							}
+						?>
+					</section>
+					<input type="submit" value="Submit" />
+				</td>
 			</tr>		
 		</table>
 	</form>
