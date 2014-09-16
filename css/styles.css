@@ -33,3 +33,8 @@ h1
 {
 	font-style: italic;
 }
+
+.invalid_input
+{
+	color: red;
+}
