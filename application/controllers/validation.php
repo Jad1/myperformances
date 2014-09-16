@@ -23,6 +23,7 @@
 		$eventDay = intval($this->input->post('day'));
 		$eventMonth = intval($this->input->post('month'));
 		$eventYear = intval($this->input->post('year'));
+		$message = array('dateerror'=> '', 'textlengtherror' => '', 'textinputerror' => '');
 
 		//Value of $unitOfMeasure depends on value of $discipline
 		switch($discipline)
@@ -37,11 +38,26 @@
 				break;
 		}
 
-		//See comments above methods to check their functionality.
-		validateDates($eventDay, $eventMonth, $eventYear);
-		validateTextLengths();
-		validateTextInputs();
+		//See comments inside methods to check their functionality.
+		$message['dateerror'] = $this->validateDate($eventDay, $eventMonth, $eventYear);
+		//validateTextLengths();
+		//validateTextInputs();
+
+		$this->load->view('newperformanceview', $message);
 	}
 
+	public function validateDate($eventDay, $eventMonth, $eventYear)
+	{
+		$todaysDate = date("j/n/Y");
+		$enteredDate = "$eventDay/$eventMonth/$eventYear";
+
+		//Check that the entered date is not in the future.
+		if($enteredDate > $todaysDate)
+		{
+			return "Entered date ($enteredDate) must not be in the future";
+		}
+
+		return "$enteredDate is OK";
+	}
 
 }
