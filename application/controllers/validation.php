@@ -57,7 +57,30 @@
 			return "Entered date ($enteredDate) must not be in the future";
 		}
 
+		switch($eventMonth)
+		{
+			case 2:
+				//Check if year is a leap year then act accordingly.
+				break;
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+				//Months with 31 days
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				//Months with 30 days
+				break;
+			default:
+				break;			
+		}
+
 		return "$enteredDate is OK";
 	}
-
 }
