@@ -61,14 +61,14 @@
 		{
 			case 2:
 				//Check if year is a leap year then act accordingly.
-				if((isLeapYear($eventYear)) && ($eventDay > 29))
+				if(($this->isLeapYear($eventYear)) && ($eventDay > 29))
 				{
 					return "Date is invalid (29 days for February in leap year)";
 				}
 
-				else if(!(isLeapYear($eventYear)) && ($eventDay > 28))
+				else if(!($this->isLeapYear($eventYear)) && ($eventDay > 28))
 				{
-					return "Date is invalid (28 days for February in non-leap year)";	
+					return "Date is invalid ($eventYear is not a leap year)";	
 				}
 				break;
 			case 1:
