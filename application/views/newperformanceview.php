@@ -23,12 +23,12 @@
 			<!--The content of this area will vary depending on which discipline is selected.-->
 			<tr>
 				<td id="distancelabel">Distance (metres)</td>
-				<td id="distanceinput"><input type="text" id="disciplineinput" /></td>
+				<td id="distanceinput"><input type="text" name="distanceinput" /></td>
 			</tr>
 			<tr>
 				<td>Time</td>
 				<td class="italics">
-					hrs <input type="text" id="hrs" size="2" />
+					hrs <input type="text" name="hrs" size="2" />
 					mins 
 					<select id="mins">
 						<?php
@@ -51,11 +51,11 @@
 			</tr>
 			<tr>
 				<td>Name of event</td>
-				<td><input type="text" id="eventname" /></td>
+				<td><input type="text" name="eventname" /></td>
 			</tr>
 			<tr>
 				<td>Location of event</td>
-				<td><input type="text" id="eventlocation" /></td>
+				<td><input type="text" name="eventlocation" /></td>
 			</tr>			
 			<tr>
 				<td>Date of event</td>
