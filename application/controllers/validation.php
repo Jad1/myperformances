@@ -48,11 +48,11 @@
 
 	public function validateDate($eventDay, $eventMonth, $eventYear)
 	{
-		$todaysDate = date("j/n/Y");
-		$enteredDate = "$eventDay/$eventMonth/$eventYear";
+		$todaysDate = date("Y-n-j");
+		$enteredDate = "$eventYear-$eventMonth-$eventDay";
 
 		//Check that the entered date is not in the future.
-		if($enteredDate > $todaysDate)
+		if(strtotime($enteredDate) > strtotime($todaysDate))
 		{
 			return "Entered date ($enteredDate) must not be in the future";
 		}
