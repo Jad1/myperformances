@@ -21,7 +21,7 @@ $(function()
 				newInput = $("<input/>",
 				{
 					type: "text",
-					id: "disciplineinput",
+					id: "distanceinput",
 					value: "tracktest"
 				});
 				distanceInput.append(newInput);
@@ -32,7 +32,7 @@ $(function()
 				newInput = $("<input/>",
 				{
 					type: "text",
-					id: "disciplineinput",
+					id: "distanceinput",
 					value: "roadtest"
 				});
 				distanceInput.append(newInput);
