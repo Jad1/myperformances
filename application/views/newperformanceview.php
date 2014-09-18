@@ -105,11 +105,20 @@
 						<?php
 							if(isset($dateerror))
 							{
-								print $dateerror;
+								print $dateerror . "<br />";
 							}
 							else
 							{
-								print "not set";
+								print "date error not set";
+							}
+
+							if(isset($textlengtherror))
+							{
+								print $textlengtherror . "<br />";
+							}
+							else
+							{
+								print "text length error not set";
 							}
 						?>
 					</section>
