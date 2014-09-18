@@ -61,6 +61,15 @@
 		{
 			case 2:
 				//Check if year is a leap year then act accordingly.
+				if((isLeapYear($eventYear)) && ($eventDay > 29))
+				{
+					return "Date is invalid (29 days for February in leap year)";
+				}
+
+				else if(!(isLeapYear($eventYear)) && ($eventDay > 28))
+				{
+					return "Date is invalid (28 days for February in non-leap year)";	
+				}
 				break;
 			case 1:
 			case 3:
@@ -83,4 +92,21 @@
 
 		return "$enteredDate is OK";
 	}
+
+	//Given a year, checks if it is a leap year.
+	public function isLeapYear($year)
+	{
+		/*Year is a leap year if:
+		  1. Year is divisble by 4 but not 100 or 400.
+		  2. Year is divisible by 4, 100 and 400.*/
+		if((($year % 4 == 0) && ($year % 100 == 0) && ($year % 400 == 0)) 
+			|| (($year % 4 == 0) && ($year % 100 != 0) && ($year % 400 != 0)))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}		
+	}	
 }
