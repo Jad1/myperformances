@@ -13,7 +13,7 @@
 	public function validateDetails()
 	{
 		$discipline = $this->input->post('discipline');
-		$disciplineInput = $this->input->post('disciplineinput');
+		$distanceInput = $this->input->post('distanceinput');
 		$unitOfMeasure = '';
 		$hrs = $this->input->post('hrs');
 		$mins = $this->input->post('mins');
@@ -40,7 +40,7 @@
 
 		//See comments inside methods to check their functionality.
 		$message['dateerror'] = $this->validateDate($eventDay, $eventMonth, $eventYear);
-		//validateTextLengths();
+		$message['textlengtherror'] = $this->validateTextLengths($distanceInput, $hrs, $eventName, $eventLocation);
 		//validateTextInputs();
 
 		$this->load->view('newperformanceview', $message);
@@ -95,6 +95,15 @@
 		}
 
 		return "$enteredDate is OK";
+	}
+
+
+	public function validateTextLengths($distanceInput, $hrs, $eventname, $eventLocation)
+	{
+		if((strlen($distanceInput) < 2) || (strlen($distanceInput) > 5))
+		{
+			return "Distance input must be between 2 and 5 characters";
+		}
 	}
 
 	//Given a year, checks if it is a leap year.
