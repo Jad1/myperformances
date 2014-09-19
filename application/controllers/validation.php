@@ -104,6 +104,11 @@
 		{
 			return "Distance input must be between 2 and 5 characters";
 		}
+
+		if((strlen($hrs) < 1) || (strlen($hrs) > 2))
+		{
+			return "hours input must be 1 or 2 characters";
+		}		
 	}
 
 	//Given a year, checks if it is a leap year.
