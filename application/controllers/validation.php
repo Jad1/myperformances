@@ -98,7 +98,7 @@
 	}
 
 
-	public function validateTextLengths($distanceInput, $hrs, $eventname, $eventLocation)
+	public function validateTextLengths($distanceInput, $hrs, $eventName, $eventLocation)
 	{
 		if((strlen($distanceInput) < 2) || (strlen($distanceInput) > 5))
 		{
@@ -108,6 +108,12 @@
 		if((strlen($hrs) < 1) || (strlen($hrs) > 2))
 		{
 			return "hours input must be 1 or 2 characters";
+		}		
+
+		if((strlen($eventName) < 3) || (strlen($eventName) > 40) 
+			|| (strlen($eventLocation) < 3) || (strlen($eventLocation) > 40))
+		{
+			return "Event name and location must be between 3 and 40 characters";
 		}		
 	}
 
