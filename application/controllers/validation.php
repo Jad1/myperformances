@@ -124,6 +124,12 @@
 		{
 			return "Distance input can only contain numbers and up to 1 decimal point";
 		}
+
+		//$hrs should only be a whole number.
+		if(!(ctype_digit(intval($hrs))))
+		{
+			return "Hours input can only contain numeric numbers";
+		}		
 	}
 
 	//Test given input against a regular expression to ensure input is valid.
