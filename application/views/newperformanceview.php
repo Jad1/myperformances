@@ -120,6 +120,15 @@
 							{
 								print "text length error not set";
 							}
+
+							if(isset($textinputerror))
+							{
+								print $textinputerror . "<br />";
+							}
+							else
+							{
+								print "text input error not set";
+							}
 						?>
 					</section>
 					<input type="submit" value="Submit" />
