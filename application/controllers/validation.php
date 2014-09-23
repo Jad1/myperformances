@@ -41,7 +41,7 @@
 		//See comments inside methods to check their functionality.
 		$message['dateerror'] = $this->validateDate($eventDay, $eventMonth, $eventYear);
 		$message['textlengtherror'] = $this->validateTextLengths($distanceInput, $hrs, $eventName, $eventLocation);
-		//validateTextInputs();
+		$message['textinputerror'] = $this->validateTextInputs($distanceInput, $hrs, $eventName, $eventLocation);
 
 		$this->load->view('newperformanceview', $message);
 	}
@@ -115,6 +115,29 @@
 		{
 			return "Event name and location must be between 3 and 40 characters";
 		}		
+	}
+
+	public function validateTextInputs($distanceInput, $hrs, $eventName, $eventLocation)
+	{
+		//$distance should be a whole number or a number with a single decimal point.
+		if(!($this->isInputValid($distanceInput, "/^\d*\.?\d*$/")))
+		{
+			return "Distance input can only contain numbers and up to 1 decimal point";
+		}
+	}
+
+	//Test given input against a regular expression to ensure input is valid.
+	public function isInputValid($input, $regex)
+	{
+		if(preg_match($regex, $input) == 0)
+		{
+			return false;
+		}
+
+		else
+		{
+			return true;
+		}
 	}
 
 	//Given a year, checks if it is a leap year.
