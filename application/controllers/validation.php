@@ -126,10 +126,12 @@
 		}
 
 		//$hrs should only be a whole number.
-		if(!(ctype_digit(intval($hrs))))
+		if(!(ctype_digit($hrs)))
 		{
 			return "Hours input can only contain numeric numbers";
 		}		
+
+		//$eventName and $locationName can have upper and lowercase
 	}
 
 	//Test given input against a regular expression to ensure input is valid.
