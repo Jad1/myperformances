@@ -22,7 +22,6 @@ $(function()
 				{
 					type: "text",
 					id: "distanceinput",
-					value: "tracktest"
 				});
 				distanceInput.append(newInput);
 				break;	
@@ -33,7 +32,6 @@ $(function()
 				{
 					type: "text",
 					id: "distanceinput",
-					value: "roadtest"
 				});
 				distanceInput.append(newInput);
 				distanceInput.append(nonBreakingSpace);
