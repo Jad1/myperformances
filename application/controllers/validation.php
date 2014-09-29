@@ -131,7 +131,13 @@
 			return "Hours input can only contain numeric numbers";
 		}		
 
-		//$eventName and $locationName can have upper and lowercase
+		/*$eventName and $locationName can have upper and lowercase letters, 
+		numbers and certain non-alphanumeric characters.*/
+		if(!($this->isInputValid($eventName, "/^[A-Za-z0-9\,\&\-\(\)]{3,40}$/")) || 
+			!($this->isInputValid($eventLocation, "/^[A-Za-z0-9\,\&\-\(\)]{3,40}$/")))
+		{
+			return "Event name and/or location name contains invalid character(s)";
+		}
 	}
 
 	//Test given input against a regular expression to ensure input is valid.
