@@ -107,27 +107,15 @@
 							{
 								print $dateerror . "<br />";
 							}
-							else
-							{
-								print "date error not set";
-							}
 
 							if(isset($textlengtherror))
 							{
 								print $textlengtherror . "<br />";
 							}
-							else
-							{
-								print "text length error not set";
-							}
 
 							if(isset($textinputerror))
 							{
 								print $textinputerror . "<br />";
-							}
-							else
-							{
-								print "text input error not set";
 							}
 						?>
 					</section>
