@@ -94,7 +94,7 @@
 				break;			
 		}
 
-		return "$enteredDate is OK";
+		return null;
 	}
 
 
@@ -115,6 +115,8 @@
 		{
 			return "Event name and location must be between 3 and 40 characters";
 		}		
+
+		return null;
 	}
 
 	public function validateTextInputs($distanceInput, $hrs, $eventName, $eventLocation)
@@ -138,6 +140,8 @@
 		{
 			return "Event name and/or location name contains invalid character(s)";
 		}
+
+		return null;
 	}
 
 	//Test given input against a regular expression to ensure input is valid.
