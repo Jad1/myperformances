@@ -8,6 +8,7 @@
 	public function index()
 	{
 		$this->load->view('newperformanceview');
+		$this->load->model('performance');
 	}
 
 	public function validateDetails()
@@ -42,6 +43,13 @@
 		$message['dateerror'] = $this->validateDate($eventDay, $eventMonth, $eventYear);
 		$message['textlengtherror'] = $this->validateTextLengths($distanceInput, $hrs, $eventName, $eventLocation);
 		$message['textinputerror'] = $this->validateTextInputs($distanceInput, $hrs, $eventName, $eventLocation);
+
+		//If there are no errors, save performance and load all saved performances.
+		if(($message['dateerror'] == null) && ($message['textlengtherror'] == null) && ($message['textinputerror'] == null))
+		{
+			$this->performance->addNewPerformance($discipline, $distanceInput, $unitOfMeasure, $hrs, $mins, $secs, 
+				$eventLocation, $eventName, $eventDay, $eventMonth, $eventYear);
+		}
 
 		$this->load->view('newperformanceview', $message);
 	}
